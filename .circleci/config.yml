@@ -3,10 +3,10 @@ version: 2.1                                                 #This is the circle
 jobs:                                                        #This is how jobs are defined
   hello-job:
     docker:                         # This specifies Docker as the execution environment for our job (hello-job).
-      - image: cimg/node:lts          # This is the primary container in which your job's commands are run.
-        auth:
-          username: mydockerhub-user                      # This line is Docker credentials for authenticated pulls.
-          password: $DOCKERHUB_PASSWORD                   # They can be set as a context in the Organization Settings.
+      - image: selvakumaru/hello-job:1.0          # This is the primary container in which your job's commands are run.
+        # auth:
+        #   username: mydockerhub-user                      # This line is Docker credentials for authenticated pulls.
+        #   password: $DOCKERHUB_PASSWORD                   # They can be set as a context in the Organization Settings.
     steps:
       - checkout                                           # check out the code in the project directory
       - run: echo "Hello World. I am selva from francium tech."      # run the `echo` command
