@@ -4,9 +4,9 @@ jobs:                                                        #This is how jobs a
   hello-job:
     docker:                         # This specifies Docker as the execution environment for our job (hello-job).
       - image: selvakumaru/hello-job:1.0          # This is the primary container in which your job's commands are run.
-        # auth:
-        #   username: mydockerhub-user                      # This line is Docker credentials for authenticated pulls.
-        #   password: $DOCKERHUB_PASSWORD                   # They can be set as a context in the Organization Settings.
+        auth:
+          username: selvakumaru                      # This line is Docker credentials for authenticated pulls.
+          password: $DOCKERHUB_PASSWORD                   # They can be set as a context in the Organization Settings.
     steps:
       - checkout                                           # check out the code in the project directory
       - run: echo "Hello World. I am selva from francium tech."      # run the `echo` command
